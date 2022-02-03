@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "61ecf17e-39d7-43b0-8c62-7b2ffaf59b8a",
+		"name": "POKEMON Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pokemon",
+			"item": [
+				{
+					"name": "Bulbasaur",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"const types = [\"grass\", \"poison\"];\r",
+									"const abilities = [\"chlorophyll\", \"overgrow\"];\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pokemon name\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"bulbasaur\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pokemon weight\", function () {\r",
+									"    pm.expect(jsonData.weight).to.eql(69);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"There are only two abilities objects\", function () {\r",
+									"    pm.expect(jsonData.abilities.length).to.eql(2);\r",
+									"});\r",
+									"\r",
+									"for (var i = 0; i < jsonData.abilities.length; i++) {\r",
+									"    pm.test(\"Ability is correct\", function () {\r",
+									"        pm.expect(abilities).to.contain(jsonData.abilities[i].ability.name);\r",
+									"    });\r",
+									"\r",
+									"}\r",
+									"pm.test(\"There are only two types objects\", function () {\r",
+									"    pm.expect(jsonData.types.length).to.eql(2);\r",
+									"});\r",
+									"\r",
+									"for (var i = 0; i < jsonData.types.length; i++) {\r",
+									"    pm.test(\"Type is correct\", function () {\r",
+									"        pm.expect(types).to.contain(jsonData.types[i].type.name);\r",
+									"    });\r",
+									"\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pokeapi.co/api/v2/pokemon/bulbasaur",
+							"protocol": "https",
+							"host": [
+								"pokeapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"v2",
+								"pokemon",
+								"bulbasaur"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Charmander",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"const types = [\"fire\"];\r",
+									"const abilities = [\"blaze\", \"solar-power\"];\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pokemon name\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"charmander\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pokemon weight\", function () {\r",
+									"    pm.expect(jsonData.weight).to.eql(85);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"There are only two abilities objects\", function () {\r",
+									"    pm.expect(jsonData.abilities.length).to.eql(2);\r",
+									"});\r",
+									"\r",
+									"for (var i = 0; i < jsonData.abilities.length; i++) {\r",
+									"    pm.test(\"Ability is correct\", function () {\r",
+									"        pm.expect(abilities).to.contain(jsonData.abilities[i].ability.name);\r",
+									"    });\r",
+									"\r",
+									"}\r",
+									"pm.test(\"There is only one types object\", function () {\r",
+									"    pm.expect(jsonData.types.length).to.eql(1);\r",
+									"});\r",
+									"\r",
+									"for (var i = 0; i < jsonData.types.length; i++) {\r",
+									"    pm.test(\"Type is correct\", function () {\r",
+									"        pm.expect(types).to.contain(jsonData.types[i].type.name);\r",
+									"    });\r",
+									"\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pokeapi.co/api/v2/pokemon/charmander",
+							"protocol": "https",
+							"host": [
+								"pokeapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"v2",
+								"pokemon",
+								"charmander"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Squirtle",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"const types = [\"water\"];\r",
+									"const abilities = [\"torrent\", \"rain-dish\"];\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pokemon name\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"squirtle\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pokemon weight\", function () {\r",
+									"    pm.expect(jsonData.weight).to.eql(90);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"There are only two abilities objects\", function () {\r",
+									"    pm.expect(jsonData.abilities.length).to.eql(2);\r",
+									"});\r",
+									"\r",
+									"for (var i = 0; i < jsonData.abilities.length; i++) {\r",
+									"    pm.test(\"Ability is correct\", function () {\r",
+									"        pm.expect(abilities).to.contain(jsonData.abilities[i].ability.name);\r",
+									"    });\r",
+									"\r",
+									"}\r",
+									"pm.test(\"There is only one types object\", function () {\r",
+									"    pm.expect(jsonData.types.length).to.eql(1);\r",
+									"});\r",
+									"\r",
+									"for (var i = 0; i < jsonData.types.length; i++) {\r",
+									"    pm.test(\"Type is correct\", function () {\r",
+									"        pm.expect(types).to.contain(jsonData.types[i].type.name);\r",
+									"    });\r",
+									"\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pokeapi.co/api/v2/pokemon/squirtle",
+							"protocol": "https",
+							"host": [
+								"pokeapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"v2",
+								"pokemon",
+								"squirtle"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "ability",
+			"value": ""
+		}
+	]
+}
